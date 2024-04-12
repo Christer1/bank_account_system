@@ -1,23 +1,3 @@
-class Transaction {
-    constructor(type, amount) {
-        this._type = type;
-        this._amount = amount;
-        this._timestamp = new Date();
-    }
-
-    // Getters
-    get type() {
-        return this._type;
-    }
-
-    get amount() {
-        return this._amount;
-    }
-
-    get timestamp() {
-        return this._timestamp;
-    }
-}
 
 class BankAccount {
     constructor(accountNumber, firstName, lastName) {
@@ -29,7 +9,6 @@ class BankAccount {
         this._transactions = [];
     }
 
-    // Getters
     get accountNumber() {
         return this._accountNumber;
     }
@@ -54,7 +33,6 @@ class BankAccount {
         return this._transactions;
     }
 
-    // Methods
     deposit(amount) {
         if (amount <= 0) {  //check if amount is not negative value
             console.log("Deposit amount must be greater than 0.");
@@ -84,7 +62,28 @@ class BankAccount {
     }
 }
 
-// Example Usage
+class Transaction {
+    constructor(type, amount) {
+        this._type = type;
+        this._amount = amount;
+        this._timestamp = new Date();
+    }
+
+    get type() {
+        return this._type;
+    }
+
+    get amount() {
+        return this._amount;
+    }
+
+    get timestamp() {
+        return this._timestamp;
+    }
+}
+
+
+
 const account = new BankAccount(123456789, "Olawale", "Yussuph");
 console.log("Account holder is: " + account.accountHolder); // Account holder is: Olawale Yussuph
 console.log("Account balance is: " + account.balance); // Account balance is: 0
